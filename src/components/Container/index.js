@@ -6,20 +6,20 @@ function Container({children, title, size}) {
   switch (size) {
     case "lg":
         return (
-            <Styled.containerLG>
+            <Styled.ContainerLG>
                 <Styled.Title>{title}</Styled.Title>
                 {children}
-            </Styled.containerLG>
+            </Styled.ContainerLG>
         )
-    case "sm":
+    case "md":
         return (
-            <Styled.containerSM>
+            <Styled.ContainerMD>
                 <Styled.Title>{title}</Styled.Title>
                     {children}
-            </Styled.containerSM>
+            </Styled.ContainerMD>
         )
       default:
-          break;
+          return null
   }
 }
 

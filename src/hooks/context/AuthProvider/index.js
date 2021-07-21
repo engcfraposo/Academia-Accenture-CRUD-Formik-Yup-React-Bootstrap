@@ -1,10 +1,12 @@
-import React, {
+  import React, {
     createContext,
     useState,
     useContext,
     useCallback,
   } from 'react';
-  
+
+  import { api } from '../../../services/api'
+
   const AuthContext = createContext({});
 
   const AuthProvider = ({ children }) => {
@@ -30,22 +32,18 @@ import React, {
       try {
         if(!login || !password) setError('Login ou senha inválidos')
         
-        const auth = {
-            login: "teste",
-            password: "teste",
-            access_token: "liberado"
-        }
+        const { data } = await api.get(`/users?login=${login}`)
 
-        if(login !== auth.login) {
+        if(data.length === 0) {
             return setError('Login ou senha inválidos')
         }
-        if(password !== auth.password) {
+        if(password !== data[0].password) {
             return setError('Login ou senha inválidos')
         }
 
-        setAuth(auth.access_token);
-        sessionStorage.setItem('@Academia_login', auth.access_token)
-        //api.defaults.headers.Authorization = `Bearer ${auth.access_token}`; 
+        setAuth(data[0].access_token);
+        sessionStorage.setItem('@Academia_login', data[0].access_token)
+        api.defaults.headers.Authorization = `Bearer ${data[0].access_token}`; 
       } catch (error) {
           setError('Login ou senha inválidos')
       }

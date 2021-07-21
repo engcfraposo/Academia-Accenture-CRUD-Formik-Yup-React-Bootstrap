@@ -20,7 +20,7 @@ export const Styled = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
   `,
   NavItem: styled(Link)`
     background: none;

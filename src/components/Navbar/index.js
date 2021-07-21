@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../../assets/logo.png'
-import { FiHome, FiLogOut } from 'react-icons/fi';
+import { FiHome, FiLogOut, FiBriefcase } from 'react-icons/fi';
 import { Styled } from './styles';
 import { useAuth } from '../../hooks/context/AuthProvider';
 import { useHistory } from 'react-router-dom';
@@ -13,6 +13,10 @@ function Navbar() {
       link: "/home", 
       icon: <FiHome color="#fff"/>
     }, 
+    {
+      link: "/create-product",
+      icon: <FiBriefcase color="#fff" />
+    },
   ]
 
   const handleClick = async () => {

@@ -14,13 +14,13 @@ function Login() {
           login: '',
           password: '',
         },
-        onSubmit: values => {
-          signIn(values)
+        onSubmit: async values => {
+          await signIn(values)
           history.push("/home")
         },
     });
     return (
-        <Container title="Login" size="sm">
+        <Container title="Login" size="md">
             <Form  onSubmit={formik.handleSubmit}>
             <Form.Group className="mb-5">
                 <Form.Label>Login</Form.Label>
@@ -45,7 +45,6 @@ function Login() {
             <Button variant="primary" type="submit">
                 Entrar
             </Button>
-            
         </Form>
             <Styled.Error>{error}</Styled.Error>
         </Container>

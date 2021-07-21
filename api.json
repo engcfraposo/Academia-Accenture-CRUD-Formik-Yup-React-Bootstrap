@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "login": "teste",
+      "password": "teste",
+      "name": "Contoso",
+      "access_token": "liberado"
+    }
+  ],
+  "products": [
+    {
+      "name": "Casa",
+      "description": "Está é uma casa",
+      "price": 20,
+      "id": 1
+    },
+    {
+      "name": "casa 2",
+      "description": "teste",
+      "price": 21,
+      "id": 2
+    },
+    {
+      "name": "casa 3",
+      "description": "sadfd",
+      "price": 32,
+      "id": 3
+    },
+    {
+      "name": "casa 4",
+      "description": "asfsdgsg",
+      "price": 34,
+      "id": 4
+    },
+    {
+      "name": "casa5",
+      "description": "dsgsdsg",
+      "price": 30,
+      "id": 5
+    },
+    {
+      "name": "casa 6",
+      "description": "sfasf",
+      "price": 32,
+      "id": 6
+    }
+  ]
+}

@@ -6,11 +6,12 @@ import Login from '../pages/Login';
 import NotFound from '../pages/NotFound';
 import Navbar from '../components/Navbar';
 import { useAuth } from '../hooks/context/AuthProvider';
+import CreateProduct from '../pages/CreateProduct';
 
 // import { Container } from './styles';
 
 function Routes() {
-  const { auth } = useAuth()
+  const { auth } = useAuth();
   return (
     <Styled.AppLayout>
         {auth && <Navbar />}
@@ -18,6 +19,7 @@ function Routes() {
             <Switch>
                 <Route path="/" exact component={Login} />
                 {auth && <Route path="/home" component={Home} />}
+                {auth && <Route path="/create-product" component={CreateProduct} />}
                 <Redirect from="*" to={NotFound} />
             </Switch>
         </Styled.PageLayout>
