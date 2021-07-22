@@ -14,16 +14,14 @@ function Home() {
   return (
     <Container title="Ultimos cadastros" size="lg">
       <Styled.CardWrapper>
-       {products.map(product => (
-         <CardProduct 
-          key={product.id} 
-          name={product.name}
-          description={product.description}
-          price={product.price}
-        />
-       ))}
+        {products.map(product =>(
+          <CardProduct 
+            key={product.id}
+            product={product}
+          />
+        ))}
       </Styled.CardWrapper>
-    </Container>
+  </Container>
   )
 }
 

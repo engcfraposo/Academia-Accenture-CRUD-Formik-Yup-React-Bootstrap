@@ -16,67 +16,60 @@ const ProductProvider = ({ children }) => {
   
   const getProducts = useCallback(
     async () => {
-    try {
-      const { data } = await api.get("/products")
-      setProducts(data)
-      setSuccess("Carregado com sucesso!")
-    } catch (error) {
-      setError("Erro ao carregar os produtos")
-    }
-  },[])
+        try {
+            const { data } = await api.get("/products")
+            setProducts(data)
+        } catch (error) {
+            setError("Error ao adquirir a lista e produtos")
+        }
+    }, 
+[])
 
-  const createProduct = useCallback(
+const postProduct = useCallback(
     async ({name, description, price}) => {
-      try {
-        await api.post("/products", {
-          name,
-          description,
-          price
-        })
-        await getProducts()
-        setSuccess("Criado com sucesso!")
-      } catch (error) {
-        setError("Erro ao criar o produto")
-      }
-  },[getProducts])
+        try {
+            await api.post("/products", {
+                name,
+                description,
+                price,
+            })
+        } catch (error) {
+            setError("Error ao postar um produto")
+        }
+    },
+[])
 
-  const editProduct = useCallback(
+const putProduct = useCallback(
     async ({id, name, description, price}) => {
-     try {
-        await api.post(`/products/${id}`, {
-          name,
-          description,
-          price
-        })
-        setProducts(pState => pState.map(
-          state => state.id === id ? {id, name, description, price} : state
-        ))
-        setSuccess("Editado com sucesso!")
-     } catch (error) {
-        setError("Erro ao editar o produto")
-     }
-  },[])
+        try {
+            await api.put(`/products/${id}`, {
+                name,
+                description,
+                price
+            })
+        } catch (error) {
+            setError("Error ao editar o produto")
+        }
+    },
+[])
 
-  const deleteProduct = useCallback(
+const deleteProduct = useCallback(
     async ({id}) => {
-      try {
-        await api.delete(`/products/${id}`)
-        setProducts(pState => pState.filter(
-          state => state.id !== id
-        ))
-        setSuccess("Editado com sucesso!")
-      } catch (error) {
-        setError("Erro ao deletar o produto")
-      }
-  },[])
+        try {
+            await api.delete(`/products/${id}`)
+        } catch (error) {
+            setError("Error ao deletar o produto")
+        }
+    },
+[])
  
   return (
     <ProductContext.Provider 
       value={{ 
         products,
         getProducts,
-        createProduct,
-        editProduct,
+        postProduct,
+        putProduct,
         deleteProduct,
         success, 
         error 

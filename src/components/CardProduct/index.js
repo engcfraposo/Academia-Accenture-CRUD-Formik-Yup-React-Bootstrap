@@ -2,19 +2,19 @@ import React from 'react';
 import {Card} from 'react-bootstrap'
 // import { Container } from './styles';
 
-function CardProduct({name, description, price}) {
+function CardProduct({product}) {
   return (
-    <Card style={{ width: '18rem', padding: "1rem", marginTop: "15px" }}>
-      <Card.Title>
-        <strong>Nome: </strong>{name}
-      </Card.Title>
-      <Card.Text className="mb-2">
-        <strong>Preço(R$): </strong> {price}
+    <Card style={{ width: '18rem' }}>
+      <Card.Body>
+        <Card.Title>{product.name}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">{product.price}</Card.Subtitle>
+        <Card.Text>
+        {product.description}
         </Card.Text>
-      <Card.Text>
-        <strong>Descrição: </strong>{description}
-      </Card.Text>
-  </Card>
+        <Card.Link href="#">Card Link</Card.Link>
+        <Card.Link href="#">Another Link</Card.Link>
+      </Card.Body>
+    </Card>
   );
 }
 
