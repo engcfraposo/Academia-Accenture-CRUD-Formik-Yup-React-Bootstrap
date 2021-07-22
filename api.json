@@ -9,18 +9,6 @@
   ],
   "products": [
     {
-      "name": "Casa",
-      "description": "Está é uma casa",
-      "price": 20,
-      "id": 1
-    },
-    {
-      "name": "casa 2",
-      "description": "teste",
-      "price": 21,
-      "id": 2
-    },
-    {
       "name": "casa 3",
       "description": "sadfd",
       "price": 32,
@@ -43,6 +31,30 @@
       "description": "sfasf",
       "price": 32,
       "id": 6
+    },
+    {
+      "name": "casca",
+      "description": "isso é uma casca",
+      "price": 20,
+      "id": 7
+    },
+    {
+      "name": "sdfsd",
+      "description": "asfsdgsg",
+      "price": 34,
+      "id": 8
+    },
+    {
+      "name": "sdfsd",
+      "description": "asfsdgsg",
+      "price": 34,
+      "id": 9
+    },
+    {
+      "name": "João",
+      "description": "asfsdgsg",
+      "price": 32,
+      "id": 10
     }
   ]
 }

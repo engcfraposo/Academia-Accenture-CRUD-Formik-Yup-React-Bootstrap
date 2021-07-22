@@ -57,6 +57,9 @@ const deleteProduct = useCallback(
     async ({id}) => {
         try {
             await api.delete(`/products/${id}`)
+            setProducts(pState => pState.filter(
+                state => state.id !== id
+            ))
         } catch (error) {
             setError("Error ao deletar o produto")
         }

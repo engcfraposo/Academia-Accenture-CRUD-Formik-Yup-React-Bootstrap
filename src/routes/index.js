@@ -20,6 +20,7 @@ function Routes() {
                 <Route path="/" exact component={Login} />
                 {auth && <Route path="/home" component={Home} />}
                 {auth && <Route path="/create-product" component={CreateProduct} />}
+                {auth && <Route path="/edit-product/:id" component={CreateProduct} />}
                 <Redirect from="*" to={NotFound} />
             </Switch>
         </Styled.PageLayout>
